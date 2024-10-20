@@ -3,21 +3,21 @@ SELECT*FROM departments;
 --1.To get the information of the department id 1,2, and 3, you use the following statement.
 
 SELECT
-		department_id,
-		department_name
+	department_id,
+	department_name
 FROM
-		departments
+	departments
 
 WHERE 
-		department_id IN (1, 2, 3);
+	department_id IN (1, 2, 3);
 
 --Result/
 
 -- department_id | department_name
 -----------------|-----------------
---   1			 | Administration
---	 2		     | Marketing
---	 3		     | Purchasing
+--   1		 | Administration
+--   2		 | Marketing
+--   3		 | Purchasing
 
 
 --2.To get the information of employees who work in departments id 9, 8, and 6, you use the following query:
@@ -37,12 +37,12 @@ ORDER BY
 
 --   first_name	  | last_name   | department_id | 
 ------------------|-------------|---------------|
---	Annarapu	  | Sathvika	|		4		|		
---	Gopari		  |	Keerthana	|		5		|		
---	Karri		  |	Santhosh	|		5		|			
---	Venkata		  |	Santhoshi	|		6		|	    
---	Joga		  | Keerthana	|		6		|		
---	Chavva		  |	Shravani	|		6		|	
+--	Annarapu  | Sathvika	|      4        |		
+--	Gopari	  | Keerthana	|      5	|		
+--	Karri     | Santhosh	|      5	|			
+--	Venkata   | Santhoshi	|      6	|	    
+--	Joga	  | Keerthana	|      6	|		
+--	Chavva    | Shravani	|      6	|	
 
 SELECT*FROM employeesdata1;
 
@@ -65,12 +65,12 @@ WHERE
 
 --   first_name	  | last_name   | department_id | departement_id|department_name    
 ------------------|-------------|---------------|---------------|-------------------
---	Venkatesh	  | Santhosh	|		6		|		6	    |IT				
---	Karri		  |	Santhosh	|		5		|		5		|Shipping		
---	Annarapu	  |	Sathwika	|		4		|		4		|Human Resources	
---	Gopari		  |	Keerthana	|		5		|	    5       |Shipping
---	Joga		  | Keerthana	|		6		|		6	    |IT
---	Chavva		  |	Shravani	|		6		|		6       |IT	
+--	Venkata	  | Santhoshi	|	6	|	6	|	IT				
+--	Karri	  | Santhosh	|	5	|	5	|	Shipping		
+--	Annarapu  | Sathwika	|	4	|	4	|	Human Resources	
+--	Gopari	  | Keerthana	|	5	|	5       |	Shipping
+--	Joga	  | Keerthana	|	6	|	6	|	IT
+--	Chavva	  | Shravani	|	6	|	6       |	IT	
 
 --4.The following query uses the inner join clauses to join 3 tables: employees, departments, and jobs to get the first name, last name, job title, and department name of employees who work in department id 4, 5, and 6.
 
@@ -88,14 +88,14 @@ WHERE
 
 --Result/
 
---   first_name	  | last_name   | job_title						|department_name    
+--   first_name	  | last_name   |      job_title		| department_name    
 ------------------|-------------|-------------------------------|-------------------
---	Venkatesh	  | Santhosh	|Administartion Vice president  |IT				
---	Karri		  |	Santhosh	|Administration Vice President  |Shipping		
---	Annarapu	  |	Sathwika	|Administration Assistant		|Human Resources	
---	Gopari		  |	Keerthana	|president			            |Shipping
---	Joga		  | Keerthana	|Administration Vice President  |IT
---	Chavva		  |	Shravani	|Accountant				        |IT	
+--	Venkatesh | Santhosh	| Administartion Vice president | IT				
+--	Karri	  | Santhosh	| Administration Vice President | Shipping		
+--	Annarapu  | Sathwika	| Administration Assistant      | Human Resources	
+--	Gopari	  | Keerthana	| president			| Shipping
+--	Joga	  | Keerthana	| Administration Vice President | IT
+--	Chavva	  | Shravani	| Accountant		        | IT	
 
 ---- Copy table structure and data from hr1 to master
 
@@ -119,11 +119,11 @@ WHERE
 	country_id IN ('US', 'UK', 'CN');
 --Result/
 
---	country_id | country_name
+--  country_id | country_name
 ---------------|-----------------
---  CN         | China
---	UK		   | United Kingdom
---	US		   | United States of America
+-- 	CN     | China
+--	UK     | United Kingdom
+--	US     | United States of America
 
 ---- Copy table structure and data from hr1 to master
 
@@ -149,13 +149,13 @@ WHERE
 
 	--Result/
 
---  Country_id    |Street_address		|  city
-------------------|---------------------|--------------------
---	 US			  |	2014 Jabberwocky Rd	| Southlake 
---   US			  | 2011Interiors Blvd	| South San Francisco 
---   US			  | 2004 Charade rd		| Seattle
---   UK			  | 8204 Athur St		| London
---   UK			  | Magdalen Centre.	| Oxford  
+--  Country_id    |Street_address      |  city
+------------------|--------------------|--------------------
+--   US 	  | 2014 Jabberwocky Rd| Southlake 
+--   US		  | 2011Interiors Blvd | South San Francisco 
+--   US		  | 2004 Charade rd    | Seattle
+--   UK		  | 8204 Athur St      | London
+--   UK		  | Magdalen Centre.   | Oxford  
 
 --7.Now, we use the LEFT JOIN clause to join the countries table with the locations table as the following query:
 
@@ -175,12 +175,12 @@ WHERE
 
 --   Country_name | Country_id  | Country_id|Street_address     |  city
 ------------------|-------------|-----------|-------------------|--------------------
--- China		  |		CN		|  NULL		|NULL				| NULL
--- United Kindomb |		UK		|	UK		|8204 Athur St		| LondonOxford
--- United Kindom  |		UK 		|	UK		|Magdalen Centre.	| Oxford 
--- United S A     |		US		|	US		|2014 Jabberwocky Rd| Southlake
--- United S A     |		US		|	US		|2011Interiors Blvd | South San FranciscoSeattle
--- United S A     |		US		|	US		|2004 Charade rd	| Seattle
+-- China	  |	CN	|    NULL   |NULL		| NULL
+-- United Kindomb |	UK	|    UK	    |8204 Athur St	| LondonOxford
+-- United Kindom  |	UK 	|    UK	    |Magdalen Centre.	| Oxford 
+-- United S A     |	US	|    US	    |2014 Jabberwocky Rd| Southlake
+-- United S A     |	US	|    US	    |2011Interiors Blvd | South San FranciscoSeattle
+-- United S A     |	US	|    US	    |2004 Charade rd	| Seattle
 
 --8.to find the country that does not have any locations in the locations table, you use the following query:
 
@@ -217,10 +217,10 @@ select*from regions;
 --Result/
 	--region     | region_name
 	-------------|-------------
---	  	1	     | Europe		
---		2        | Americas		
---	    3		 | Asia		
---		4		 | Middle East and Africa	
+--	  1	     | Europe		
+--	  2          | Americas		
+--	  3	     | Asia		
+--	  4	     | Middle East and Africa	
 
 --9.The following statement demonstrates how to join 3 tables: regions, countries, and locations:
 
@@ -238,14 +238,14 @@ WHERE
 
 --Result/
 
-	--region_name | Country_Name      | Street_address    |  city
-------------------|-------------------|-------------------|--------------------
--- Europe		  |United Kindom	  |8204 Athur St	  |London
--- Europe		  |United Kindom	  |Magdalen Centre.	  |Oxford
--- Americas		  |United S A 		  |2014 Jabberwocky Rd|Southlake
--- Americas       |United S A		  |2011	Interiors Blvd|South San Francisco
--- Americas       |United S A         |2004 Charade rd	  | Seattle
--- Asia           |China		      |NULL				  |NULL
+--region_name | Country_Name      | Street_address    |  city
+--------------|-------------------|-------------------|--------------------
+-- Europe     |United Kindom	  |8204 Athur St      | London
+-- Europe     |United Kindom	  |Magdalen Centre.   | Oxford
+-- Americas   |United S A         |2014 Jabberwocky Rd| Southlake
+-- Americas   |United S A         |2011	Interiors Blvd| South San Francisco
+-- Americas   |United S A         |2004 Charade rd    | Seattle
+-- Asia       |China		  |NULL		      | NULL
 				  
 --10.the following statement uses the GROUP BY clause with the COUNT function to count the number of employees by department:
 
@@ -259,13 +259,13 @@ GROUP BY
 
 --Result/
 
--- department_id | headcount
-	-------------|----------
---		4	     |		1
---		5        |		2
---	    6		 |		3
---		8		 |		7
---		9        |		8
+-- department_id| headcount
+   -------------|----------------
+--	4	|	1
+--	5       |	2
+--	6	|	3
+--	8	|	7
+--	9       |	8
 
 --11.The following example returns the number of employees by department. And it uses an INNER JOIN clause to include the department name in the result:
 
@@ -282,10 +282,10 @@ GROUP BY
 
 --department_name  | headcount
   -----------------|----------
--- Excutive		   |	8	
+-- Excutive	   |	8	
 -- Human Resources |	1	
--- IT			   |	3	
--- sales	       |	7	
+-- IT		   |	3	
+-- sales	   |	7	
 -- Shipping        |	2	
 
 --12.The following example uses the HAVING clause to find departments with headcounts are greater than 5:
@@ -308,8 +308,8 @@ ORDER BY
 
 --department_name  | headcount
   -----------------|----------
--- Excutive		   |	8	
--- Sales		   |	7	
+-- Excutive	   |	8	
+-- Sales	   |	7	
 
 --13.The following query returns the minimum, maximum, and average salary of employees in each department.
 
@@ -327,13 +327,13 @@ GROUP BY
 
 --Result/
 
---	department_id | min_salary | max_salary | average_salary
+--department_id   | min_salary | max_salary | average_salary
 ------------------|------------|------------|-----------------
--- Exacutive	  |9000		   |30000	    |17625
--- Human Resources|6000		   |6000		|6000
--- IT			  |9000		   |30000		|23000
--- Sales		  |9000		   |30000		|18000
--- Shipping       |30000	   |40000		|35000
+-- Exacutive	  |9000	       |  30000	    | 117625
+-- Human Resources|6000	       |  6000	    |  6000
+-- IT		  |9000	       |  30000	    |  23000
+-- Sales	  |9000	       |  30000	    |  18000
+-- Shipping       |30000       |  40000	    |  35000
 
 --14.To get the total salary per department, you apply the SUM function to the salary column and group employees by the department_id column as follows:
 
@@ -351,11 +351,11 @@ GROUP BY
 
 --department_name  | total_salary
   -----------------|----------
--- Excutive		   |141000	
--- Human Resources |6000	
--- IT			   |69000	
--- sales	       |126000	
--- Shipping        |70000
+-- Excutive	   | 141000	
+-- Human Resources | 6000	
+-- IT		   | 69000	
+-- sales	   | 126000	
+-- Shipping        | 70000
 
 --15.The following statement groups rows with the same values in both department_id and job_id columns in the same group then return the rows for each of these groups.
 
@@ -378,6 +378,6 @@ GROUP BY department_name ,
 ------------------ |------------------------------|--------------------
 -- Exacutive	   |Accountant	                  |2	    
 -- Human Resources |Administartive Assistant      |1		
--- IT			   |Accountant	                  |1		
--- Sales		   |Administartive Vice Presindent|2		
+-- IT		   |Accountant	                  |1		
+-- Sales	   |Administartive Vice Presindent|2		
 -- Shipping        |Presedent	                  |1		
