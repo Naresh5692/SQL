@@ -18,12 +18,12 @@ GROUP BY manager_id,First_Name, Last_Name;
 
 --  manager_id	  | First_name  | Last_Name     | direct_reports
 ------------------|-------------|---------------|-----------------
---	200			  | Amgoth		|	Shiva		|		1	    			
---	200			  |	Dumpala		|	Sowmya		|		1				
---	200 		  |	Karri		|	Santhosh	|		1			
---	200			  |	Kusuma		|	Vinay		|	    1       
---	200			  | Muddangula	|	naresh		|		1	    
---	200			  |	Palle		|	Keerthna	|		1    
+--	200	  | Amgoth	| Shiva		| 1	    			
+--	200	  | Dumpala	| Sowmya	| 1				
+--	200 	  | Karri	| Santhosh	| 1			
+--	200	  | Kusuma	| Vinay		| 1       
+--	200	  | Muddangula	| naresh	| 1	    
+--	200	  | Palle	| Keerthna	| 1    
 
 
 --2.To find the department that has employees with the lowest salary greater than 10000, you use the following query:
@@ -48,7 +48,7 @@ ORDER BY
 
 --   department_id| department_name | min_salary 
 ------------------|-----------------|------------
---	5			  | Shipping	    |	15000				
+--	5	  | Shipping	    |	15000				
 
 
 --3.To find the departments that have the average salaries of employees between 5000 and 7000, you use the AVG function as the following query:
@@ -72,11 +72,11 @@ ORDER BY
 
 --   department_id| department_name | avg_salary 
 ------------------|-----------------|------------
---	4			  | Human Resources	|	6000	
+--	4	  | Human Resources |	6000	
 
 
 
---4.Let’s set up a new table named inventory to demonstrate the functionality of the GROUPING SETS.
+--4.Letâ€™s set up a new table named inventory to demonstrate the functionality of the GROUPING SETS.
 
 CREATE TABLE inventory (
     warehouse VARCHAR(255),
@@ -115,18 +115,18 @@ VALUES('San Jose','Samsung','Note 8',150);
 SELECT*FROM inventory;
 --Result/
 
---  | warehouse	   |  product		  | model |	quantity
+--  | warehouse	   |  product	      | model |	quantity
 ----|--------------|------------------|-------|-----------
---1 | San Fransisco|	iPhone		  |	6s	  |	50
---2 | San Fransisco|	iPhone		  |	7	  |	10
---3 | San Fransisco|	iPhone		  |	X	  |	200
---4 | San Fransisco|	Samsung	Galaxy|	S	  |	200
---5 | San Fransisco|	Samsung	Note  |	8	  |	100
---6 | San Jose	   |    iPhone		  |	6s	  |	100
---7 | San Jose	   |	iPhone		  |	7	  |	50
---8 | San Jose	   |	iPhone		  |	X     |	150
---9 | San Jose	   |	Samsung	Galaxy|	S	  |	200
---10| San Jose	   |	Samsung	Note  |	8	  |	150
+--1 | San Fransisco|	iPhone	      |	6s    |	50
+--2 | San Fransisco|	iPhone	      |	7     |	10
+--3 | San Fransisco|	iPhone	      |	X     |	200
+--4 | San Fransisco|	Samsung	Galaxy|	S     |	200
+--5 | San Fransisco|	Samsung	Note  |	8     |	100
+--6 | San Jose	   |    iPhone	      |	6s    |	100
+--7 | San Jose	   |	iPhone	      |	7     |	50
+--8 | San Jose	   |	iPhone	      |	X     |	150
+--9 | San Jose	   |	Samsung	Galaxy|	S     |	200
+--10| San Jose	   |	Samsung	Note  |	8     |	150
 
 --5.The following example defines a grouping set (warehouse, product). It returns the number of stock keeping units (SKUs) stored in the inventory by warehouse and product.
 
@@ -142,12 +142,12 @@ GROUP BY
 
 --Result/
 
---	warehouse   |product |qty
+--  warehouse   |product |qty
  ---------------|--------|--------
 -- San Fransisco|iPhone	 |260
 -- San Fransisco|Samsung |300
--- San Jose		|iPhone	 |300
--- San Jose	    |Samsung |350
+-- San Jose	|iPhone	 |300
+-- San Jose     |Samsung |350
 
 --6.The following query finds the number of SKUs by the warehouse. It defines the grouping set (warehouse):
 
@@ -161,10 +161,10 @@ GROUP BY
 
 --Result/
 
---	warehouse	  |qty
+--	warehouse |qty
 ------------------|-------
---	San Fransisco |	560
---	San Jose	  | 650
+--  San Fransisco |	560
+--  San Jose	  | 650
 
 --7.The following query returns the number of SKUs by the product. It defines the grouping set (product):
 
@@ -178,10 +178,10 @@ GROUP BY
 
 --Result/
 
---	product |qty
-------------|--------
---	iPhone	|560
---	Samsung	|650
+-- product      |qty
+----------------|--------
+-- iPhone	|560
+-- Samsung	|650
 
 --8.The following query finds the number of SKUs for all warehouses and products. It defines an empty grouping set ().
 
@@ -190,7 +190,7 @@ SELECT
 FROM
     inventory;
 
---Result/
+-- Result/
 -- |qty
 ---|--------
 -- |1210
@@ -236,16 +236,16 @@ FROM
 --Result/
 
 --	warehouse    |	product |qty
------------------|----------|-------
+---------------------|----------|-------
 --	San Fransisco| iPhone	|260
 --	San Fransisco| Samsung	|300
---	San Jose	 | iPhone	|300
---	San Jose	 | Samsung	|350
---	San Fransisco| NULL		|560
---	San Jose	 | NULL		|650
+--	San Jose     | iPhone	|300
+--	San Jose     | Samsung	|350
+--	San Fransisco| NULL	|560
+--	San Jose     | NULL	|650
 --	NULL	     | iPhone	|560
 --	NULL	     | Samsung	|650
---	NULL		 | NULL		|1210
+--	NULL	     | NULL	|1210
 
 --10.You can apply the GROUPING SETS to rewrite the query with the UNION ALL clauses above:
 
@@ -265,17 +265,17 @@ GROUP BY
 
 --Result/
 
---	warehouse	-|product |	qty
------------------|--------|---------
+--	warehouse    |product |	qty
+---------------------|--------|---------
 --	San Fransisco|iPhone  |	260
---	San Jose	 |iPhone  |	300
---	NULL		 |iPhone  |	560
+--	San Jose     |iPhone  |	300
+--	NULL	     |iPhone  |	560
 --	San Fransisco|Samsung |	300
---	San Jose	 |Samsung |	350
+--	San Jose     |Samsung |	350
 --	NULL	     |Samsung |	650
---	NULL	     |NULL	  | 1210
---	San Fransisco|NULL	  | 560
---	San Jose	 |NULL	  |	650
+--	NULL	     |NULL    | 1210
+--	San Fransisco|NULL    | 560
+--	San Jose     |NULL    |	650
 
 --11.The following example finds all employees whose salaries are equal to the highest salary of employees in the Marketing department:
 
@@ -294,7 +294,7 @@ WHERE
 --Result/
 --first_name|last_name|salary
 ------------|---------|--------
---Gopari	|Keerthana|40000
+--Gopari    |Keerthana|40000
 
 
 
