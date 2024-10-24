@@ -292,6 +292,7 @@ WHERE
             department_id = 5);
 
 --Result/
+
 --first_name|last_name|salary
 ------------|---------|--------
 --Gopari    |Keerthana|40000
